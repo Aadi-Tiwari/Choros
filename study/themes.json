@@ -1,0 +1,10 @@
+{
+  "refund_status": "Cannot find, understand or trust refund status or timing",
+  "identity_verification": "Problems verifying identity, personal information not matching, ID.me or account access",
+  "errors_outages": "Error messages, features not working, crashes, service unavailable",
+  "navigation_findability": "Hard to find information or a feature, confusing layout or too many steps",
+  "unclear_or_unhelpful_info": "Information is vague, generic, outdated, jargon-heavy or does not answer the question",
+  "contact_support": "Cannot reach a person or get help or a callback",
+  "slow_performance": "Slow loading or long waits in the interface",
+  "other": "Anything else"
+}

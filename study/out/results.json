@@ -1,0 +1,111 @@
+{
+ "real": {
+  "complaints": 411,
+  "share": {
+   "refund_status": 0.219,
+   "identity_verification": 0.214,
+   "errors_outages": 0.243,
+   "navigation_findability": 0.036,
+   "unclear_or_unhelpful_info": 0.056,
+   "contact_support": 0.078,
+   "slow_performance": 0.0,
+   "other": 0.153
+  },
+  "real_themes": [
+   "contact_support",
+   "errors_outages",
+   "identity_verification",
+   "refund_status",
+   "unclear_or_unhelpful_info"
+  ]
+ },
+ "personas_all_runs": {
+  "complaints": 23,
+  "themes_found": [
+   "errors_outages",
+   "identity_verification",
+   "navigation_findability",
+   "unclear_or_unhelpful_info"
+  ],
+  "recall": 0.6,
+  "precision": 0.565,
+  "share": {
+   "refund_status": 0.0,
+   "identity_verification": 0.13,
+   "errors_outages": 0.13,
+   "navigation_findability": 0.304,
+   "unclear_or_unhelpful_info": 0.304,
+   "contact_support": 0.0,
+   "slow_performance": 0.0,
+   "other": 0.13
+  }
+ },
+ "baseline_no_browsing": {
+  "complaints": 30,
+  "themes_found": [
+   "contact_support",
+   "identity_verification",
+   "navigation_findability",
+   "refund_status",
+   "unclear_or_unhelpful_info"
+  ],
+  "recall": 0.8,
+  "precision": 0.6,
+  "share": {
+   "refund_status": 0.1,
+   "identity_verification": 0.1,
+   "errors_outages": 0.0,
+   "navigation_findability": 0.133,
+   "unclear_or_unhelpful_info": 0.233,
+   "contact_support": 0.167,
+   "slow_performance": 0.0,
+   "other": 0.267
+  }
+ },
+ "per_run": {
+  "8a341f74": {
+   "complaints": 14,
+   "themes_found": [
+    "errors_outages",
+    "navigation_findability",
+    "unclear_or_unhelpful_info"
+   ],
+   "recall": 0.4,
+   "precision": 0.429,
+   "share": {
+    "refund_status": 0.0,
+    "identity_verification": 0.0,
+    "errors_outages": 0.143,
+    "navigation_findability": 0.5,
+    "unclear_or_unhelpful_info": 0.286,
+    "contact_support": 0.0,
+    "slow_performance": 0.0,
+    "other": 0.071
+   }
+  },
+  "bb6143ad": {
+   "complaints": 9,
+   "themes_found": [
+    "errors_outages",
+    "identity_verification",
+    "unclear_or_unhelpful_info"
+   ],
+   "recall": 0.6,
+   "precision": 0.778,
+   "share": {
+    "refund_status": 0.0,
+    "identity_verification": 0.333,
+    "errors_outages": 0.111,
+    "navigation_findability": 0.0,
+    "unclear_or_unhelpful_info": 0.333,
+    "contact_support": 0.0,
+    "slow_performance": 0.0,
+    "other": 0.222
+   }
+  }
+ },
+ "persona_complaints_excluded_as_tool_artifacts": 15,
+ "persona_points_grounded": 0.87,
+ "stability_jaccard": 0.5,
+ "classifier_agreement_with_claude_labels": 0.283
+}

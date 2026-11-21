@@ -1,0 +1,814 @@
+[
+ {
+  "source": "baseline",
+  "user": "Margaret, 72, retired, low tech comfort",
+  "kind": "confusing",
+  "text": "Too many menus and links; she can't tell which page applies to her.",
+  "grounded": null,
+  "theme": "navigation_findability"
+ },
+ {
+  "source": "baseline",
+  "user": "Margaret, 72, retired, low tech comfort",
+  "kind": "frustrating",
+  "text": "Can't find a phone number to reach a real person without digging.",
+  "grounded": null,
+  "theme": "contact_support"
+ },
+ {
+  "source": "baseline",
+  "user": "Margaret, 72, retired, low tech comfort",
+  "kind": "missing",
+  "text": "Wants large-print, step-by-step guidance written in plain language.",
+  "grounded": null,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "baseline",
+  "user": "Margaret, 72, retired, low tech comfort",
+  "kind": "liked",
+  "text": "The Where's My Refund tool is simple once she finds it.",
+  "grounded": null
+ },
+ {
+  "source": "baseline",
+  "user": "Jake, 26, gig worker, high tech comfort",
+  "kind": "liked",
+  "text": "Direct Pay and online account let him pay quickly without mailing anything.",
+  "grounded": null
+ },
+ {
+  "source": "baseline",
+  "user": "Jake, 26, gig worker, high tech comfort",
+  "kind": "confusing",
+  "text": "Self-employment tax and quarterly estimated payment pages are dense and jargon-heavy.",
+  "grounded": null,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "baseline",
+  "user": "Jake, 26, gig worker, high tech comfort",
+  "kind": "frustrating",
+  "text": "Identity verification with ID.me is slow and has many steps.",
+  "grounded": null,
+  "theme": "identity_verification"
+ },
+ {
+  "source": "baseline",
+  "user": "Jake, 26, gig worker, high tech comfort",
+  "kind": "missing",
+  "text": "No simple calculator that clearly tells him how much to pay each quarter.",
+  "grounded": null,
+  "theme": "other"
+ },
+ {
+  "source": "baseline",
+  "user": "Maria, 41, Spanish-speaking, limited English",
+  "kind": "confusing",
+  "text": "Translated pages are limited, and some tax terms stay in English.",
+  "grounded": null,
+  "theme": "other"
+ },
+ {
+  "source": "baseline",
+  "user": "Maria, 41, Spanish-speaking, limited English",
+  "kind": "missing",
+  "text": "Wants more Spanish-language forms and instructions that match the English ones.",
+  "grounded": null,
+  "theme": "other"
+ },
+ {
+  "source": "baseline",
+  "user": "Maria, 41, Spanish-speaking, limited English",
+  "kind": "liked",
+  "text": "Appreciates that a Spanish version of the site exists.",
+  "grounded": null
+ },
+ {
+  "source": "baseline",
+  "user": "Maria, 41, Spanish-speaking, limited English",
+  "kind": "frustrating",
+  "text": "Hard to know which forms to file for her situation.",
+  "grounded": null,
+  "theme": "navigation_findability"
+ },
+ {
+  "source": "baseline",
+  "user": "Dave, 55, small business owner",
+  "kind": "frustrating",
+  "text": "Form and publication numbers are hard to search; he downloads the wrong PDFs.",
+  "grounded": null,
+  "theme": "navigation_findability"
+ },
+ {
+  "source": "baseline",
+  "user": "Dave, 55, small business owner",
+  "kind": "liked",
+  "text": "Can download current and prior-year forms free.",
+  "grounded": null
+ },
+ {
+  "source": "baseline",
+  "user": "Dave, 55, small business owner",
+  "kind": "confusing",
+  "text": "Business rules on payroll tax deposits and 1099 filings feel scattered across pages.",
+  "grounded": null,
+  "theme": "navigation_findability"
+ },
+ {
+  "source": "baseline",
+  "user": "Dave, 55, small business owner",
+  "kind": "missing",
+  "text": "Wants a clear checklist for business filing deadlines.",
+  "grounded": null,
+  "theme": "other"
+ },
+ {
+  "source": "baseline",
+  "user": "Priya, 34, parent applying for credits",
+  "kind": "liked",
+  "text": "The Interactive Tax Assistant helps check Child Tax Credit and EITC eligibility.",
+  "grounded": null
+ },
+ {
+  "source": "baseline",
+  "user": "Priya, 34, parent applying for credits",
+  "kind": "confusing",
+  "text": "Eligibility rules for credits have many exceptions and long text.",
+  "grounded": null,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "baseline",
+  "user": "Priya, 34, parent applying for credits",
+  "kind": "frustrating",
+  "text": "Questions in the assistant feel repetitive and give vague final answers.",
+  "grounded": null,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "baseline",
+  "user": "Priya, 34, parent applying for credits",
+  "kind": "missing",
+  "text": "Wants a plain summary of how much credit she might get.",
+  "grounded": null,
+  "theme": "other"
+ },
+ {
+  "source": "baseline",
+  "user": "Tom, 63, owes back taxes, anxious",
+  "kind": "liked",
+  "text": "Payment plan application online is faster than calling.",
+  "grounded": null
+ },
+ {
+  "source": "baseline",
+  "user": "Tom, 63, owes back taxes, anxious",
+  "kind": "confusing",
+  "text": "Hard to compare options such as installment agreements, offers in compromise and hardship status.",
+  "grounded": null,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "baseline",
+  "user": "Tom, 63, owes back taxes, anxious",
+  "kind": "frustrating",
+  "text": "Worries about fees and interest, and the site doesn't show total cost upfront.",
+  "grounded": null,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "baseline",
+  "user": "Tom, 63, owes back taxes, anxious",
+  "kind": "missing",
+  "text": "Wants clear contact options for talking to someone about his balance.",
+  "grounded": null,
+  "theme": "contact_support"
+ },
+ {
+  "source": "baseline",
+  "user": "Ayesha, 29, checking refund status",
+  "kind": "liked",
+  "text": "Refund status tool is quick and mobile-friendly.",
+  "grounded": null
+ },
+ {
+  "source": "baseline",
+  "user": "Ayesha, 29, checking refund status",
+  "kind": "frustrating",
+  "text": "Status messages like 'being processed' give no real timeline.",
+  "grounded": null,
+  "theme": "refund_status"
+ },
+ {
+  "source": "baseline",
+  "user": "Ayesha, 29, checking refund status",
+  "kind": "confusing",
+  "text": "Doesn't understand why her refund is delayed or what 'review' means.",
+  "grounded": null,
+  "theme": "refund_status"
+ },
+ {
+  "source": "baseline",
+  "user": "Ayesha, 29, checking refund status",
+  "kind": "missing",
+  "text": "Wants notifications by text or email when her status changes.",
+  "grounded": null,
+  "theme": "refund_status"
+ },
+ {
+  "source": "baseline",
+  "user": "Carlos, 48, victim of identity theft",
+  "kind": "frustrating",
+  "text": "Identity theft process involves forms and mailing paper documents.",
+  "grounded": null,
+  "theme": "identity_verification"
+ },
+ {
+  "source": "baseline",
+  "user": "Carlos, 48, victim of identity theft",
+  "kind": "confusing",
+  "text": "Not clear whether to use the Identity Protection PIN, Form 14039, or both.",
+  "grounded": null,
+  "theme": "identity_verification"
+ },
+ {
+  "source": "baseline",
+  "user": "Carlos, 48, victim of identity theft",
+  "kind": "missing",
+  "text": "Wants a live help option or status tracker for his case.",
+  "grounded": null,
+  "theme": "contact_support"
+ },
+ {
+  "source": "baseline",
+  "user": "Carlos, 48, victim of identity theft",
+  "kind": "liked",
+  "text": "The identity theft guidance page lists steps in order.",
+  "grounded": null
+ },
+ {
+  "source": "baseline",
+  "user": "Linda, 38, nurse, tries on phone between shifts",
+  "kind": "frustrating",
+  "text": "Some pages and PDFs are awkward on a phone screen.",
+  "grounded": null,
+  "theme": "other"
+ },
+ {
+  "source": "baseline",
+  "user": "Linda, 38, nurse, tries on phone between shifts",
+  "kind": "liked",
+  "text": "Online account shows balance and payment history in one place.",
+  "grounded": null
+ },
+ {
+  "source": "baseline",
+  "user": "Linda, 38, nurse, tries on phone between shifts",
+  "kind": "confusing",
+  "text": "Notice letters reference codes she can't decode on the site.",
+  "grounded": null,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "baseline",
+  "user": "Linda, 38, nurse, tries on phone between shifts",
+  "kind": "missing",
+  "text": "Wants a chat feature for quick questions.",
+  "grounded": null,
+  "theme": "contact_support"
+ },
+ {
+  "source": "baseline",
+  "user": "Walter, 80, uses a screen reader",
+  "kind": "frustrating",
+  "text": "Long pages with many links are tiring to navigate with a screen reader.",
+  "grounded": null,
+  "theme": "other"
+ },
+ {
+  "source": "baseline",
+  "user": "Walter, 80, uses a screen reader",
+  "kind": "confusing",
+  "text": "PDF forms are difficult to fill in and not always accessible.",
+  "grounded": null,
+  "theme": "other"
+ },
+ {
+  "source": "baseline",
+  "user": "Walter, 80, uses a screen reader",
+  "kind": "liked",
+  "text": "Text-based pages with clear headings are easier to follow.",
+  "grounded": null
+ },
+ {
+  "source": "baseline",
+  "user": "Walter, 80, uses a screen reader",
+  "kind": "missing",
+  "text": "Wants an easy way to request help by phone or mail for accessibility needs.",
+  "grounded": null,
+  "theme": "contact_support"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Maya Chen",
+  "kind": "liked",
+  "text": "The search box showed a '5 suggestions available' notice when I clicked it, which made it feel like help was ready.",
+  "grounded": true,
+  "step": 1
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Maya Chen",
+  "kind": "confusing",
+  "text": "The suggestions were announced but I couldn't tell what they were or how to use them before typing my question.",
+  "grounded": true,
+  "step": 1,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Maya Chen",
+  "kind": "frustrating",
+  "text": "When I tried to open a result, the link did nothing and timed out, so I was stuck on the results page.",
+  "grounded": true,
+  "step": 4,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Maya Chen",
+  "kind": "missing",
+  "text": "The results link had no visible label, so I couldn't tell which result it led to or whether it answered my question.",
+  "grounded": true,
+  "step": 4,
+  "theme": "other"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Harold Mitchell",
+  "kind": "confusing",
+  "text": "The first link I clicked had a long label about a Refunds menu and using the spacebar, which was confusing for someone who just uses a mouse, and all I noticed afterward was a 'page last reviewed' note.",
+  "grounded": true,
+  "step": 1,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Harold Mitchell",
+  "kind": "liked",
+  "text": "The 'Where to find this information' link took me to help explaining where each item I'd need is located, which suits someone like me who isn't sure what's on his tax forms.",
+  "grounded": true,
+  "step": 2
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Harold Mitchell",
+  "kind": "liked",
+  "text": "The 'Your tax return information' button opened up the details I would need for the lookup, so I could read it without typing anything.",
+  "grounded": true,
+  "step": 3
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Harold Mitchell",
+  "kind": "missing",
+  "text": "I never got a clear, plain summary at the start saying 'here is the list of what you need,' so I had to click several things to piece it together.",
+  "grounded": true,
+  "step": 1,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Carlos Mendoza",
+  "kind": "liked",
+  "text": "The LANGUAGES button was easy to find and it let me choose Español right away.",
+  "grounded": true,
+  "step": 1
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Carlos Mendoza",
+  "kind": "liked",
+  "text": "After I typed my question in Spanish, the search box told me there were 5 suggestions, so it understood my language.",
+  "grounded": true,
+  "step": 3
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Carlos Mendoza",
+  "kind": "frustrating",
+  "text": "When I clicked 'Ver todos los resultados' I got an Access Denied page and no results, so I was stuck.",
+  "grounded": true,
+  "step": 4,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Carlos Mendoza",
+  "kind": "missing",
+  "text": "The Access Denied page gave no help, no explanation and no link back in simple words, so I did not know what to do next.",
+  "grounded": false,
+  "step": 5,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Linda Okafor",
+  "kind": "frustrating",
+  "text": "The first link I tried to click did nothing and timed out, so I couldn't even get started.",
+  "grounded": true,
+  "step": 1,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Linda Okafor",
+  "kind": "confusing",
+  "text": "I clicked the IRS Facebook link and it took me away from anything about identity verification, which felt like a strange place to send someone worried about a scam.",
+  "grounded": true,
+  "step": 3,
+  "theme": "identity_verification"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Linda Okafor",
+  "kind": "missing",
+  "text": "The page showed no text or buttons at all, so there was no explanation of what identity verification means or how to tell if my letter is real.",
+  "grounded": false,
+  "step": 4,
+  "theme": "identity_verification"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Linda Okafor",
+  "kind": "missing",
+  "text": "I never saw clear steps to take, like how to check the letter or who to contact, which is what I needed as a worried nurse.",
+  "grounded": false,
+  "step": 4,
+  "theme": "identity_verification"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Gloria Simmons",
+  "kind": "liked",
+  "text": "Typing into the search box brought up a notice that 5 suggestions were available, which was a helpful quick start.",
+  "grounded": true,
+  "step": 1
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Gloria Simmons",
+  "kind": "frustrating",
+  "text": "I tried to click a link that had no readable name and nothing happened before it timed out, so I could not open what I wanted.",
+  "grounded": true,
+  "step": 3,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Gloria Simmons",
+  "kind": "confusing",
+  "text": "A link with no visible text is hard to understand and would be impossible to use with enlarged text or a screen reader.",
+  "grounded": true,
+  "step": 3,
+  "theme": "other"
+ },
+ {
+  "source": "bb6143ad",
+  "user": "Gloria Simmons",
+  "kind": "missing",
+  "text": "I never got to the Form 1040 instructions page, so I could not confirm that the page was easy to read with large text.",
+  "grounded": true,
+  "step": 6,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Maya Chen",
+  "kind": "frustrating",
+  "text": "My first click on an unlabeled link timed out and nothing happened, so I had to find another way in.",
+  "grounded": true,
+  "step": 1,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Maya Chen",
+  "kind": "liked",
+  "text": "Typing my plain-language question into the search box brought up suggestions right away, and one matched what I was asking.",
+  "grounded": true,
+  "step": 2
+ },
+ {
+  "source": "8a341f74",
+  "user": "Maya Chen",
+  "kind": "liked",
+  "text": "The 'Do I need to file a tax return?' page listed what to gather, like filing status, tax withheld and gross income, which was what I needed.",
+  "grounded": true,
+  "step": 3
+ },
+ {
+  "source": "8a341f74",
+  "user": "Maya Chen",
+  "kind": "missing",
+  "text": "The page did not give me a direct yes or no for a part-time student income; I'd have to go through the Begin tool to find out.",
+  "grounded": false,
+  "step": 4,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Harold Peterson",
+  "kind": "liked",
+  "text": "Typing my question into the search box brought up suggestions right away, so I did not have to know the exact form name.",
+  "grounded": true,
+  "step": 1
+ },
+ {
+  "source": "8a341f74",
+  "user": "Harold Peterson",
+  "kind": "frustrating",
+  "text": "I clicked the link about Notice 703 and nothing happened, so I could not read it and had to try something else.",
+  "grounded": true,
+  "step": 3,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Harold Peterson",
+  "kind": "confusing",
+  "text": "I was not sure which of the suggested pages was the right one, since there were several with similar names like General Information and Publication 915.",
+  "grounded": true,
+  "step": 2,
+  "theme": "navigation_findability"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Harold Peterson",
+  "kind": "liked",
+  "text": "Clicking 'Are Any of Your Benefits Taxable' took me straight to the section that answers my question.",
+  "grounded": true,
+  "step": 5
+ },
+ {
+  "source": "8a341f74",
+  "user": "Jasmine Ortiz",
+  "kind": "confusing",
+  "text": "After searching 'estimated tax' I only got a '5 suggestions available' notice, so I had to click 'See all results' to see anything useful.",
+  "grounded": true,
+  "step": 1,
+  "theme": "navigation_findability"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Jasmine Ortiz",
+  "kind": "frustrating",
+  "text": "Clicking the Payments result in the search results didn't work and timed out, so I couldn't tell if it was relevant.",
+  "grounded": true,
+  "step": 3,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Jasmine Ortiz",
+  "kind": "confusing",
+  "text": "I had to switch between the Individuals and Businesses tabs to find the Estimated tax section, and a link with no visible label failed to open, so it wasn't clear which audience a self-employed gig worker belongs to.",
+  "grounded": true,
+  "step": 7,
+  "theme": "navigation_findability"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Jasmine Ortiz",
+  "kind": "liked",
+  "text": "The Form 1040-ES page showed a recent 'last reviewed' date and gave me the form and its instructions in one place.",
+  "grounded": true,
+  "step": 10
+ },
+ {
+  "source": "8a341f74",
+  "user": "Derek Williams",
+  "kind": "liked",
+  "text": "Typing Child Tax Credit into the search box right away showed a note that 5 suggestions were available, which made it feel like I was on the right track.",
+  "grounded": true,
+  "step": 1
+ },
+ {
+  "source": "8a341f74",
+  "user": "Derek Williams",
+  "kind": "confusing",
+  "text": "After clicking See all results and then Individuals, it wasn't clear to me whether I was getting closer to the credit's eligibility details or just filtering to a general category.",
+  "grounded": true,
+  "step": 3,
+  "theme": "navigation_findability"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Derek Williams",
+  "kind": "frustrating",
+  "text": "The next link I tried to click had no visible label and didn't respond, so I got stuck and couldn't open the Child Tax Credit page.",
+  "grounded": true,
+  "step": 4,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Derek Williams",
+  "kind": "missing",
+  "text": "I never saw who qualifies or how much the credit is, and there was no obvious clear link straight to the eligibility information.",
+  "grounded": true,
+  "step": 4,
+  "theme": "navigation_findability"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Amara Okafor",
+  "kind": "liked",
+  "text": "The LANGUAGES button was easy to find and led me quickly toward help in other languages.",
+  "grounded": true,
+  "step": 1
+ },
+ {
+  "source": "8a341f74",
+  "user": "Amara Okafor",
+  "kind": "liked",
+  "text": "The Interpretation services section listed phone numbers for interpreters, which is exactly the kind of help I need to understand my taxes.",
+  "grounded": true,
+  "step": 3
+ },
+ {
+  "source": "8a341f74",
+  "user": "Amara Okafor",
+  "kind": "confusing",
+  "text": "After I clicked 'Get more help', the only message I saw was a page-updated date, so I was not sure if anything had really changed.",
+  "grounded": true,
+  "step": 2,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Amara Okafor",
+  "kind": "frustrating",
+  "text": "I tried to click a link with no visible name and it did not work, so I could not tell where it would go.",
+  "grounded": true,
+  "step": 4,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Linda Kowalski",
+  "kind": "liked",
+  "text": "The Businesses button was easy to spot and clicking it worked right away, which seemed like the right place to start for a bakery owner.",
+  "grounded": true,
+  "step": 1
+ },
+ {
+  "source": "8a341f74",
+  "user": "Linda Kowalski",
+  "kind": "frustrating",
+  "text": "The next link I tried to click did nothing and timed out, so I was stuck and couldn't go any further toward the payroll tax information.",
+  "grounded": true,
+  "step": 2,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Linda Kowalski",
+  "kind": "confusing",
+  "text": "The link I tried had no visible text or label, so I couldn't tell what it was supposed to lead to.",
+  "grounded": true,
+  "step": 2,
+  "theme": "other"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Marcus Reed",
+  "kind": "frustrating",
+  "text": "The first Payments link I clicked timed out and didn't take me anywhere, so I had to find another route.",
+  "grounded": true,
+  "step": 1,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Marcus Reed",
+  "kind": "confusing",
+  "text": "Clicking the tax debt help tool link gave a page error, and I couldn't tell whether I'd landed on the right page.",
+  "grounded": true,
+  "step": 2,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Marcus Reed",
+  "kind": "liked",
+  "text": "The expandable sections for short-term and long-term payment plans, plus the Expand all button, made the eligibility info easy to scan.",
+  "grounded": true,
+  "step": 9
+ },
+ {
+  "source": "8a341f74",
+  "user": "Marcus Reed",
+  "kind": "frustrating",
+  "text": "The links for what to do if I'm not eligible, the low income qualification link, and the Form 13844 link all timed out, so the help for people like me was hard to reach.",
+  "grounded": true,
+  "step": 16,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Priya Natarajan",
+  "kind": "liked",
+  "text": "Searching for 'identity verification notice' brought up a suggestion list and a direct page for identity verification for an IRS letter recipient, so I got to relevant content quickly.",
+  "grounded": true,
+  "step": 3
+ },
+ {
+  "source": "8a341f74",
+  "user": "Priya Natarajan",
+  "kind": "liked",
+  "text": "The CP5071 series notice page gave me a specific notice to compare against what I might have received.",
+  "grounded": true,
+  "step": 4
+ },
+ {
+  "source": "8a341f74",
+  "user": "Priya Natarajan",
+  "kind": "liked",
+  "text": "The 'How to know it's the IRS' page directly addressed how to tell a real contact from a fake one.",
+  "grounded": true,
+  "step": 6
+ },
+ {
+  "source": "8a341f74",
+  "user": "Priya Natarajan",
+  "kind": "confusing",
+  "text": "The 'Page Last Reviewed or Updated' dates were scattered and some looked odd, so I couldn't tell how current the guidance was across pages.",
+  "grounded": true,
+  "step": 5,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Walter Brooks",
+  "kind": "confusing",
+  "text": "After I clicked the Refunds menu link, all I saw was a notice about when the page was last reviewed, which didn't tell me what to do next.",
+  "grounded": true,
+  "step": 1,
+  "theme": "unclear_or_unhelpful_info"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Walter Brooks",
+  "kind": "frustrating",
+  "text": "Clicking 'Use refund tracker' led to an Access Denied page, so I couldn't check my refund status at all.",
+  "grounded": true,
+  "step": 2,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Walter Brooks",
+  "kind": "missing",
+  "text": "The Access Denied page had no links, no explanation, and no phone number or other way to reach a person, leaving me stuck.",
+  "grounded": false,
+  "step": 3,
+  "theme": "contact_support"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Elena Vasquez",
+  "kind": "liked",
+  "text": "Searching for EITC eligibility brought up suggestions right away and led me to the main EITC page easily.",
+  "grounded": true,
+  "step": 1
+ },
+ {
+  "source": "8a341f74",
+  "user": "Elena Vasquez",
+  "kind": "frustrating",
+  "text": "The 'Expand all' button didn't work for me because there appeared to be two of them, so I had to open sections one by one.",
+  "grounded": true,
+  "step": 5,
+  "theme": "errors_outages"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Elena Vasquez",
+  "kind": "confusing",
+  "text": "I had to click through several pages (general info, basic qualifications, earned income) to get to the rules, and it wasn't clear where my income and family size would be checked together.",
+  "grounded": true,
+  "step": 4,
+  "theme": "navigation_findability"
+ },
+ {
+  "source": "8a341f74",
+  "user": "Elena Vasquez",
+  "kind": "missing",
+  "text": "I didn't see a simple income-by-family-size answer or a quick way to tell if I qualify without reading through the tax year tables.",
+  "grounded": true,
+  "step": 8,
+  "theme": "navigation_findability"
+ }
+]
