@@ -77,6 +77,30 @@ export default function StudyPage() {
       </section>
 
       <section className={panel}>
+        <h2 className="text-lg font-medium">Sources and verification</h2>
+        <h3 className="mt-4 text-sm font-medium text-zinc-200">Where the data came from</h3>
+        <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400">
+          <li>Real complaints: public reviews of IRS2Go on the App Store (<a className="text-orange-100 underline underline-offset-4" href="https://apps.apple.com/us/app/irs2go/id414113282" target="_blank" rel="noreferrer">apps.apple.com/us/app/irs2go/id414113282</a>), downloaded from Apple&apos;s public customer review feed (itunes.apple.com/us/rss/customerreviews/id=414113282, 10 pages of 50, most recent first) on November 21, 2026.</li>
+          <li>Website tested: <a className="text-orange-100 underline underline-offset-4" href="https://www.irs.gov/" target="_blank" rel="noreferrer">www.irs.gov</a>, visited live by the personas on November 21, 2026 in read-only mode.</li>
+          <li>Theme labels for reviews, persona complaints and the baseline: Claude Sonnet 5.5, using one fixed list of 8 themes for all three.</li>
+        </ul>
+        <h3 className="mt-5 text-sm font-medium text-zinc-200">How the results were checked</h3>
+        <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400">
+          <li>Every persona complaint was read by hand. {results.persona_complaints_excluded_as_tool_artifacts} came from the testing tool (clicks that timed out, IRS.gov&apos;s bot protection) and were removed before scoring.</li>
+          <li>Each persona complaint must name the step it is about. Steps that never happened are flagged; {pct(results.persona_points_grounded)} of complaints pointed to a real recorded step.</li>
+          <li>Two separate runs with the same request, to see whether results repeat ({pct(results.stability_jaccard)} theme overlap).</li>
+          <li>A baseline that guesses without browsing, so the personas have to beat something.</li>
+          <li>The first run lost 5 of 10 personas when connections to the AI dropped. Retries were added and the second run finished with all 10. Both runs are included.</li>
+        </ul>
+        <h3 className="mt-5 text-sm font-medium text-zinc-200">Where to find the work</h3>
+        <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400">
+          <li>Code and data are in the project repository under <code className="text-zinc-300">study/</code>: <code className="text-zinc-300">fetch_reviews.py</code> (download), <code className="text-zinc-300">label.mjs</code> (theme labels), <code className="text-zinc-300">baseline_and_label.mjs</code> (baseline), <code className="text-zinc-300">analyze.py</code> (scores and chart), <code className="text-zinc-300">data/</code> (raw and labeled reviews, persona complaints) and <code className="text-zinc-300">out/results.json</code>.</li>
+          <li>Persona runs: bb6143ad and 8a341f74. Their screenshots, steps and reactions are in the dashboard&apos;s run history.</li>
+          <li>Total model cost for the study: about $0.41.</li>
+        </ul>
+      </section>
+
+      <section className={panel}>
         <h2 className="text-lg font-medium">What it means</h2>
         <p className="mt-3 text-sm leading-relaxed text-zinc-400">In this test, browsing did not beat guessing. The personas found {Math.round(personas.recall * realThemes)} of {realThemes} real themes and the guess found {Math.round(guess.recall * realThemes)} of {realThemes}. The personas missed two real themes: refund status and reaching a person. They only browse, so they could not use the refund tracker or try to call or chat with the IRS, and refund status is one of the three biggest real complaints. The no-browsing guess missed errors and outages, the biggest real complaint. The personas also pointed more often to pages that were hard to find or unclear, which the reviews rarely mention.</p>
         <p className="mt-3 text-sm leading-relaxed text-zinc-400">The two runs shared {pct(results.stability_jaccard)} of their themes, so one run is not enough to trust a result.</p>
