@@ -2,9 +2,44 @@
 
 Hear from your audience before you launch.
 
+**500 real IRS2Go reviews · 10 personas × 2 live runs on IRS.gov · theme classifier 61% vs 24% baseline · [live demo](https://choros-two.vercel.app)**
+
 Describe your site and who it is for. Choros creates a cast of fictional personas that fit it: a first-time visitor, someone in a hurry, someone who is not comfortable with technology. Each one uses the site in its own real browser with its own account and goal. After the visit, each persona says in its own words what confused them, what frustrated them, what was missing and what they liked, and whether they would come back. Every point is tied to the recorded step it is about.
 
 The reactions are opinions from fictional characters. They do not predict what real people will do, and they are kept separate from bugs. Choros also checks the recorded traffic for real failures (server errors, false success messages, private data reaching the wrong account), and those count only when they happen again on request.
+
+## Study: do AI visitors find what real users complain about?
+
+**Question.** When Choros personas browse IRS.gov, do they raise the same complaint themes as real users, and do they do better than simply guessing without browsing?
+
+**Data.** 500 public App Store reviews of the IRS2Go app; the 411 rated 1 to 3 stars are the real complaints. Each review was given one of 8 themes (`study/themes.json`).
+
+**Method.**
+1. Two live Choros runs on IRS.gov, 10 personas each, in browse-only mode.
+2. A baseline: the same model lists likely complaints without visiting the site.
+3. Persona and baseline points are tagged with the same themes. 15 of 38 persona complaints were removed as tool artifacts (timeouts, bot blocks), leaving 23.
+4. A TF-IDF and logistic regression classifier trained on the labeled reviews checks the theme labels: 61.4% held-out accuracy (83 test reviews) against 24.1% for always guessing the most common theme; 5-fold CV 58.9% ± 4.2%.
+
+**Result.** The personas did not beat the baseline.
+
+| | Real themes matched (recall) | Points on a real theme (precision) | Points |
+|---|---|---|---|
+| Personas, both runs | 0.60 | 0.565 | 23 |
+| Baseline, no browsing | **0.80** | **0.60** | 30 |
+
+Personas raised no refund-status or contact-support complaints, which are 22% and 8% of real ones, because browse-only visitors cannot sign in. They over-reported navigation (30% of their points against 4% of real complaints). 87% of persona points cite a recorded step. Run-to-run theme overlap (Jaccard) was 0.5.
+
+![Complaint themes: real reviews, personas and baseline](study/out/themes_chart.png)
+
+**Limits.**
+- App reviews are compared with a website, and personas could not log in, so some themes were out of reach.
+- Small sample: 23 persona points from 2 runs.
+- The same model labeled the reviews, played the personas, made the baseline and tagged the points. The classifier agrees with its tags on only 28% of persona and baseline points, so the labels are a weak check.
+- The artifact filter is a keyword list and may let some tool errors through.
+
+**What this means.** In this test, personas were better at surfacing navigation and clarity problems than account-level complaints. A next step is letting personas use test accounts and hand-labeling a sample to check the model's tags.
+
+Files: `study/fetch_reviews.py` (reviews), `study/label.mjs` (review labels), `study/classify.py` (classifier), `study/baseline_and_label.mjs` (baseline and point tags), `study/analyze.py` (results). Outputs are in `study/out/`. The labeling scripts call the Anthropic API.
 
 ## Builds on earlier work
 
