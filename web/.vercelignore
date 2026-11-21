@@ -1,0 +1,6 @@
+.choros-runs
+.env*
+*.log
+pnpm-lock.yaml
+.next
+node_modules
