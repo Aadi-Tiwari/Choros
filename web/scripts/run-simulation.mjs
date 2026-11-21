@@ -42,6 +42,8 @@ function isLocalUrl(raw) {
   try { return ["localhost", "127.0.0.1", "[::1]"].includes(new URL(raw).hostname); } catch { return false; }
 }
 function localUrl(raw) {
+  // When the site is shared through a public link, visitors must not reach apps on this computer or network.
+  if (process.env.CHOROS_PUBLIC_ONLY === "1") throw new Error("This shared version tests public websites and the built-in demos only, not local addresses.");
   const url = new URL(raw);
   if (!["http:", "https:"].includes(url.protocol) || !["localhost", "127.0.0.1", "[::1]"].includes(url.hostname) || url.username || url.password) throw new Error("Use a local test app URL, such as http://localhost:3000. Hosted targets are not enabled in this local build.");
   return url.href;
@@ -57,6 +59,7 @@ try {
   const { loadTarget } = await load("config.mjs");
   // Public websites run browse-only. Check the address before any model call is spent on planning.
   let publicSite = Boolean(request.url) && !isLocalUrl(request.url);
+  if (request.url && !publicSite) localUrl(request.url); // refuse local addresses in shared mode before any model call
   let publicUrl = "";
   if (publicSite) {
     if (request.mode === "privacy") throw new Error("Privacy checks need test accounts, so they only run on local apps. Choose Hear reactions or Explore journeys for a public website.");
