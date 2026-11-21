@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Play, Link, Folder, ArrowUp, Zap, Loader2 } from "lucide-react"
+import { Play, Folder, ArrowUp, Zap, Loader2 } from "lucide-react"
 import { PulsingBorder } from "@paper-design/shaders-react"
 import { motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
@@ -17,13 +17,11 @@ export function ChatInterface() {
   const [liveUsers, setLiveUsers] = useState(2)
   const [notice, setNotice] = useState("")
   const [appUrl, setAppUrl] = useState("")
-  const [showUrl, setShowUrl] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [importing, setImporting] = useState(false)
   const [demoState, setDemoState] = useState<"idle" | "preparing" | "ready">("idle")
   const preparedDemo = useRef<Promise<string> | null>(null)
   const router = useRouter()
-  const urlInput = useRef<HTMLInputElement>(null)
   const input = useRef<HTMLTextAreaElement>(null)
   const fileInput = useRef<HTMLInputElement>(null)
 
@@ -38,13 +36,12 @@ export function ChatInterface() {
       setMode(draft.mode)
       setAudienceSize(draft.audienceSize ?? 20)
       setLiveUsers(draft.liveUsers ?? 2)
-      setShowUrl(Boolean(draft.url))
     } catch { /* A new session starts with an empty composer. */ }
   }, [])
 
   function startNotelyDemo() {
     if (submitting || demoState === "preparing") return
-    setPrompt(NOTELY_DEMO_GOAL); setMode("privacy"); setAppUrl(""); setShowUrl(false); setNotice(""); setDemoState("preparing")
+    setPrompt(NOTELY_DEMO_GOAL); setMode("privacy"); setAppUrl(""); setNotice(""); setDemoState("preparing")
     input.current?.focus()
     const prepare = async () => {
       const response = await fetch("/api/simulations", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ goal:NOTELY_DEMO_GOAL, url:"", mode:"privacy", demo:"notely-privacy" }) })
@@ -87,7 +84,6 @@ export function ChatInterface() {
     } catch (error) {
       setSubmitting(false)
       setNotice(error instanceof Error ? error.message : "Could not start the simulation. Please try again.")
-      if (!appUrl.trim()) { setShowUrl(true); requestAnimationFrame(() => urlInput.current?.focus()) }
     }
   }
 
@@ -171,18 +167,13 @@ export function ChatInterface() {
                     continueSimulation()
                   }
                 }}
-                placeholder="Describe your site, who uses it and what they come to do..."
+                placeholder="Name a website and who uses it, e.g. Test the IRS website with 5 taxpayers checking their refund..."
                 className="min-h-[80px] resize-none bg-transparent border-none text-white text-base placeholder:text-zinc-500 focus:ring-0 focus:outline-none focus-visible:ring-0 focus-visible:outline-none [&:focus]:ring-0 [&:focus]:outline-none [&:focus-visible]:ring-0 [&:focus-visible]:outline-none"
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
               />
             </div>
 
-            {showUrl && <div id="app-url-field" className="mb-4 px-2">
-              <label htmlFor="app-url" className="mb-2 block text-xs text-orange-100/70">Site address</label>
-              <input id="app-url" ref={urlInput} type="url" value={appUrl} onChange={(event) => setAppUrl(event.target.value)} placeholder="https://example.com or http://localhost:3000" className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white outline-none focus:border-orange-200" />
-              <p className="mt-2 text-[11px] text-zinc-500">Public websites run browse-only: personas read, follow links and search. Nothing is submitted, signed up for or bought.</p>
-            </div>}
             {mode === "audience" && <div className="mb-4 grid grid-cols-2 gap-3 px-2">
               <label className="text-xs text-orange-100/70">Audience size<input aria-label="Audience size" type="number" min={1} max={100} value={audienceSize} onChange={event => setAudienceSize(Number(event.target.value))} className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white outline-none focus:border-orange-200" /></label>
               <label className="text-xs text-orange-100/70">Live explorers<input aria-label="Live explorers" type="number" min={1} max={10} value={liveUsers} onChange={event => setLiveUsers(Number(event.target.value))} className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white outline-none focus:border-orange-200" /></label>
@@ -203,18 +194,6 @@ export function ChatInterface() {
                   onClick={startNotelyDemo}
                 >
                   <Play className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-9 w-9 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white p-0"
-                  aria-label="Add an app URL"
-                  title="Add an app URL"
-                  aria-expanded={showUrl}
-                  aria-controls="app-url-field"
-                  onClick={() => { setShowUrl(true); requestAnimationFrame(() => urlInput.current?.focus()) }}
-                >
-                  <Link className="h-4 w-4" />
                 </Button>
                 {/* Center model selector */}
                 <div className="flex items-center">
@@ -282,7 +261,7 @@ export function ChatInterface() {
             if (!text.trim()) throw new Error("That brief is empty. Choose another file.")
             if (file.name.toLowerCase().endsWith(".json")) {
               const draft = validateSimulation(JSON.parse(text))
-              setPrompt(draft.goal); setAppUrl(draft.url); setMode(draft.mode); setAudienceSize(draft.audienceSize ?? 20); setLiveUsers(draft.liveUsers ?? 2); setShowUrl(Boolean(draft.url))
+              setPrompt(draft.goal); setAppUrl(draft.url); setMode(draft.mode); setAudienceSize(draft.audienceSize ?? 20); setLiveUsers(draft.liveUsers ?? 2);
             } else setPrompt(text)
             input.current?.focus()
           } catch (error) { setNotice(error instanceof Error ? error.message : "Could not read that brief.") }
