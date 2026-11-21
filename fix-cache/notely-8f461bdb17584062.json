@@ -1,0 +1,17 @@
+{
+  "target": "notely",
+  "signature": "data_leak:GET /api/notes/:id",
+  "title": "Priya can read Maria's private data",
+  "savedAt": "2026-11-07T22:20:18.899Z",
+  "summary": "Added an ownership check to the note GET endpoint. Owners retain access; other users receive 404. Not executed, as requested.",
+  "applied": [
+    {
+      "path": "server.mjs",
+      "reason": "Check ownership before serving an individual note to prevent another signed-in user from reading it.",
+      "before": "1ab999ef928cec0750126449d792fac1a738b9d7d4f319c3107296802a20990d",
+      "after": "c4cff401507e5c1647df39a6f32f7062dd9652c8ac93188c00281298ccdb1e3d"
+    }
+  ],
+  "diff": "diff --git a/server.mjs b/server.mjs\nindex cbb72fb..718b671 100644\n--- a/server.mjs\n+++ b/server.mjs\n@@ -91,6 +91,7 @@ async function api(req, res, url) {\n     const note = db.notes.find((n) => n.id === Number(noteMatch[1]));\n     if (!note) return send(res, 404, { error: \"Note not found.\" });\n     if (method === \"GET\") {\n+      if (note.ownerId !== user.id) return send(res, 404, { error: \"Note not found.\" });\n       return send(res, 200, publicNote(note));\n     }\n     if (method === \"PUT\") {\n",
+  "model": "Codex CLI (local login)"
+}

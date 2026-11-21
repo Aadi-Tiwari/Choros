@@ -1,0 +1,17 @@
+{
+  "target": "seatdrop-planted",
+  "signature": "data_leak:GET /api/state",
+  "title": "Devoted indie superfan 1 can read Curious first-timer 2's private data",
+  "savedAt": "2026-11-07T22:56:15.867Z",
+  "summary": "Restricted recentOrder to the signed-in owner's active order. Other users and signed-out visitors cannot read it. Verification was limited to reviewing the supplied source; no tools were run.",
+  "applied": [
+    {
+      "path": "server.js",
+      "reason": "Apply the authenticated user's ownership check to recentOrder at the server response boundary, preserving the owner's full access.",
+      "before": "47299a652af874a1a5d7b538333bdbfc4f09eea60c3d00b3c70b48fdc997b1e4",
+      "after": "072cd8ae500a555602f809695718332f3b7ce8ce1410ab7389bf2211fcc23d55"
+    }
+  ],
+  "diff": "diff --git a/server.js b/server.js\nindex 260c272..206e8a2 100644\n--- a/server.js\n+++ b/server.js\n@@ -43,7 +43,7 @@ const server = http.createServer(async (req, res) => {\n     }\r\n     const user = getUser(req);\r\n     if (req.method === 'GET' && url.pathname === '/api/state') {\r\n-      return json(res, 200, { event: { name: 'Midnighre', date: 'Dec 12', opensAt, price: 8500 }, recentOrder: db.orders.find(o => !o.cancelled) || null, user: publicUser(user), seats, sold: db.orders.filter(o => !o.cancelled).flatMap(o => o.seats), order: user ? db.orders.find(o => o.userId === user.id && !o.cancelled) || null : null });\r\n+      return json(res, 200, { event: { name: 'Midnighre', date: 'Dec 12', opensAt, price: 8500 }, recentOrder: user ? db.orders.find(o => o.userId === user.id && !o.cancelled) || null : null, user: publicUser(user), seats, sold: db.orders.filter(o => !o.cancelled).flatMap(o => o.seats), order: user ? db.orders.find(o => o.userId === user.id && !o.cancelled) || null : null });\r\n     }\r\n     if (req.method !== 'POST') return json(res, 404, { error: 'Not found.' });\r\n     if (req.headers.origin && req.headers.origin !== `http://${req.headers.host}` && req.headers.origin !== `https://${req.headers.host}`) return json(res, 403, { error: 'Request origin rejected.' });\r\n",
+  "model": "Codex CLI (local login)"
+}

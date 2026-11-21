@@ -1,0 +1,17 @@
+{
+  "target": "seatdrop-planted",
+  "signature": "ticket_invariant:promo_reuse",
+  "title": "EARLYBIRD is redeemed at most once in total",
+  "savedAt": "2026-11-07T23:00:15.225Z",
+  "summary": "Reject EARLYBIRD after its first redemption, including after cancellation. No tools or tests run.",
+  "applied": [
+    {
+      "path": "server.js",
+      "reason": "Check the existing persisted redemption flag before creating a discounted order. The check and flag update run synchronously without an intervening await.",
+      "before": "a0128fefa9d93ddc786664a601f388a759df4e81f6059fc254373caa87aad8d8",
+      "after": "0bd7886c523e9e321f54579f5b2431d97a9c979889e9ac32cb2dbe443f92f48d"
+    }
+  ],
+  "diff": "diff --git a/server.js b/server.js\nindex 86c96d8..7835886 100644\n--- a/server.js\n+++ b/server.js\n@@ -79,6 +79,7 @@ const server = http.createServer(async (req, res) => {\n       \n       const promo = String(body.promo || '').trim().toUpperCase();\n       if (promo && promo !== 'EARLYBIRD') return json(res, 400, { error: 'That promo code is not valid.' });\n+      if (promo && db.promoUsed) return json(res, 409, { error: 'EARLYBIRD has already been redeemed.' });\n       \n       const order = { id: crypto.randomUUID(), userId: user.id, name: user.name, email: user.email, seats: body.seats, total: body.seats.length * 8500 * (promo ? 0.8 : 1), promo: promo || null, createdAt: new Date().toISOString(), cancelled: false };\n       db.orders.push(order); if (promo) db.promoUsed = true; save();\n",
+  "model": "Codex CLI (local login)"
+}

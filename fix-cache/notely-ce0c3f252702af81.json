@@ -1,0 +1,17 @@
+{
+  "target": "notely",
+  "signature": "crash:GET /api/search",
+  "title": "Server error when Priya used /api/search",
+  "savedAt": "2026-11-07T22:18:50.639Z",
+  "summary": "Fixed search crashes by treating the query as literal text. No tools were run; the change is unverified at runtime.",
+  "applied": [
+    {
+      "path": "server.mjs",
+      "reason": "Escape regular-expression metacharacters so queries such as c++ (pointers) match literally without throwing.",
+      "before": "410aeaca7c863b083a9b0ae7b74a4c4d401aefef7a3c40f26502d20e624b6fc7",
+      "after": "1ab999ef928cec0750126449d792fac1a738b9d7d4f319c3107296802a20990d"
+    }
+  ],
+  "diff": "diff --git a/server.mjs b/server.mjs\nindex b9946f4..cbb72fb 100644\n--- a/server.mjs\n+++ b/server.mjs\n@@ -82,7 +82,7 @@ async function api(req, res, url) {\n   }\n   if (method === \"GET\" && pathname === \"/api/search\") {\n     const q = url.searchParams.get(\"q\") || \"\";\n-    const pattern = new RegExp(q, \"i\");\n+    const pattern = new RegExp(q.replace(/[.*+?^${}()|[\\]\\\\]/g, \"\\\\$&\"), \"i\");\n     return send(res, 200, db.notes.filter((n) => n.ownerId === user.id && (pattern.test(n.title) || pattern.test(n.body))).map(publicNote));\n   }\n \n",
+  "model": "Codex CLI (local login)"
+}

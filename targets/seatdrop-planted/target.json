@@ -1,0 +1,57 @@
+{
+  "id": "seatdrop-planted",
+  "name": "SeatDrop (bugs written in on purpose)",
+  "label": "Separate disclosed control: bugs written in on purpose. Not an independent discovery result.",
+  "description": "A concert ticket website: 20 seats in a 4 by 5 map, up to 2 seats per buyer, EARLYBIRD gives 20 percent off for one redemption total, private My order and cancellation.",
+  "app": "app",
+  "start": [
+    "node",
+    "server.js"
+  ],
+  "env": {
+    "port": "PORT",
+    "dataFile": "DATA_FILE"
+  },
+  "editable": [
+    "server.js",
+    "public/app.js",
+    "public/index.html",
+    "public/style.css"
+  ],
+  "auth": {
+    "identityPath": "/api/state",
+    "identityName": "user.email",
+    "login": {
+      "method": "POST",
+      "path": "/api/signin",
+      "body": {
+        "email": "{name}",
+        "password": "{password}"
+      }
+    }
+  },
+  "privateResponses": [
+    {
+      "path": "^/api/state$",
+      "fields": [
+        "order.email"
+      ],
+      "matchCredential": true
+    }
+  ],
+  "publicPaths": [],
+  "ticketRush": true,
+  "maxSteps": 18,
+  "users": [],
+  "invariants": [
+    "Seats sold never exceed 20",
+    "Each seat has at most one active order owner",
+    "EARLYBIRD redeemed at most once, including cancelled orders"
+  ],
+  "nonRepeatableWrites": [
+    "/api/buy"
+  ],
+  "expectedConflicts": [
+    "/api/buy"
+  ]
+}

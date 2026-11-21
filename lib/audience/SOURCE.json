@@ -1,0 +1,44 @@
+{
+  "reused": "Audience expansion, seeded population variation and person validation. No world engine.",
+  "files": [
+    {
+      "source": "person_sim/schema.py",
+      "sha256": "401be260d3ccb422c76e220ff7f374e1bf53f2c188bcbb53d1548eccea04712b",
+      "functions": [
+        "InvalidInput",
+        "text",
+        "strings",
+        "fields",
+        "state",
+        "Person"
+      ],
+      "destination": "schema.py"
+    },
+    {
+      "source": "person_sim/life_schema.py",
+      "sha256": "5c3809e478220953a0013c1fe09f8a1a9ab11bb377a662a23db06cc64f3c1d7e",
+      "functions": [
+        "integer"
+      ],
+      "destination": "life_schema.py"
+    },
+    {
+      "source": "person_sim/population.py",
+      "sha256": "57476a8f6d0de2af2dba05ea4507da3261d8d18b77efbeb4206c5161a5addfa2",
+      "functions": [
+        "generate_population"
+      ],
+      "destination": "population.py"
+    },
+    {
+      "source": "person_sim/audience_test.py",
+      "sha256": "b1a942062201f8d968f6fe6bb8e31a5216ad806da78db5618aefba340d55d05c",
+      "functions": [
+        "allocate",
+        "build_people"
+      ],
+      "destination": "audience.py"
+    }
+  ],
+  "component": "Choros audience engine"
+}

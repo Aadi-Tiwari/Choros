@@ -1,0 +1,37 @@
+[
+  {
+    "file": "package.json",
+    "bytes": 137,
+    "sha256": "2754b1485d2e656b0411e8e64f348d4ab6b32e08581769fbe0f3653cf502ee35"
+  },
+  {
+    "file": "public\\app.js",
+    "bytes": 6921,
+    "sha256": "99b874c1230f2c93d68d16b337916729832fb0436c525db913f738b219a70fc9"
+  },
+  {
+    "file": "public\\index.html",
+    "bytes": 3855,
+    "sha256": "a0fff5666190d32fbdbb4a6cf9a9b260ada62a681aebab4941962e9c3e68d575"
+  },
+  {
+    "file": "public\\style.css",
+    "bytes": 7630,
+    "sha256": "3fb943af73b953d181392fb80f1343651685a806d5ddcfbe4b7f833fb3021a68"
+  },
+  {
+    "file": "README.md",
+    "bytes": 996,
+    "sha256": "ca880e5a9e798903ea4d3559f811048e3ad08eb95f0a8fba2d6653043aa1f0b0"
+  },
+  {
+    "file": "seatdrop.test.js",
+    "bytes": 5050,
+    "sha256": "4fce0a08b9c418a21df128016a86d28728713073933b517a91e570e8f8203df2"
+  },
+  {
+    "file": "server.js",
+    "bytes": 7344,
+    "sha256": "2bde615d71561b1486ab49a70ec6dbebd231361352f31d7ce6af348029f039a2"
+  }
+]
